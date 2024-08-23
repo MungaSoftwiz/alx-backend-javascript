@@ -3,10 +3,8 @@ const countStudents = require('./3-read_file_async');
 
 const app = express();
 const port = 1245;
-const hostname = '127.0.0.1';
 
 app.get('/', (req, res) => {
-  res.setHeader('Content-Type', 'text/plain');
   res.send('Hello Holberton School!');
 });
 
@@ -20,6 +18,7 @@ app.get('/students', async (req, res) => {
   }
 });
 
-app.listen(port, hostname, () => {});
+app.listen(port, () => {
+});
 
 module.exports = app;
