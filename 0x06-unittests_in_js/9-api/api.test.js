@@ -33,9 +33,9 @@ describe('testing our application', function () {
 
   describe('testing for cart page', () => {
     it('request to cart page should return 200 status code when id is a number', (done) => {
-      request('http://localhost:7865/cart/77', function (error, resp, body) {
+      request('http://localhost:7865/cart/77', function (err, resp, body) {
         if (err) { assert.equal(true, false); }
-        assert.equal(res.statusCode, 200);
+        assert.equal(resp.statusCode, 200);
         assert.equal(body, 'Payment methods for cart 77');
         done();
       });
@@ -44,7 +44,7 @@ describe('testing our application', function () {
     it('should return status code 404 when id is not a number', (done) => {
       request('http://localhost:7865/cart/munga', function (err, resp, body) {
         if (err) { assert.equal(true, false); }
-        assert.equal(res.statusCode, 404);
+        assert.equal(resp.statusCode, 404);
         done();
       });
     });
